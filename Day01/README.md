@@ -1,1 +1,0 @@
-I learned how to initialize the CUDA runtime and query GPU device properties. I wrote a program that lists details like total memory, number of SMs, warp size, and thread limits for each GPU. This helps me understand the hardware before running any CUDA kernels.
