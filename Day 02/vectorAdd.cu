@@ -5,6 +5,8 @@
 
 __global__ void addVectors(float* dA, float* dB, float* dC, int N){
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
+    // Even after allocating block size and grid size to match value of N, there are cases where there can be few additional
+    // threads allocated (Since block size can only be a multiple of 32), so we need this check
     if(tid < N){
         dC[tid] = dA[tid] + dB[tid];
     }
